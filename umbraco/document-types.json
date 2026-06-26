@@ -1,0 +1,124 @@
+{
+  "_comment": "Umbraco Document Type definitions for capetown.gov.za migration. Import via Umbraco backoffice or uSync.",
+
+  "documentTypes": [
+    {
+      "alias": "homePage",
+      "name": "Home Page",
+      "icon": "icon-home",
+      "allowedAsRoot": true,
+      "allowedChildren": ["sectionLanding"],
+      "properties": [
+        { "alias": "heroHeading",      "name": "Hero Heading",       "type": "Umbraco.TextBox" },
+        { "alias": "heroSubtitle",     "name": "Hero Subtitle",      "type": "Umbraco.TextBox" },
+        { "alias": "quickLinks",       "name": "Quick Links",        "type": "Umbraco.MultiUrlPicker" },
+        { "alias": "featuredServices", "name": "Featured Services",  "type": "Umbraco.NestedContent" },
+        { "alias": "seoTitle",         "name": "SEO Title",          "type": "Umbraco.TextBox" },
+        { "alias": "seoDescription",   "name": "SEO Description",    "type": "Umbraco.TextArea" }
+      ]
+    },
+    {
+      "alias": "sectionLanding",
+      "name": "Section Landing Page",
+      "icon": "icon-section",
+      "allowedAsRoot": false,
+      "allowedChildren": ["contentPage", "departmentPage", "newsArticlePage", "documentPage"],
+      "properties": [
+        { "alias": "pageTitle",        "name": "Page Title",         "type": "Umbraco.TextBox" },
+        { "alias": "introText",        "name": "Intro Text",         "type": "Umbraco.TinyMCE" },
+        { "alias": "sectionIcon",      "name": "Section Icon",       "type": "Umbraco.MediaPicker3" },
+        { "alias": "subSections",      "name": "Sub-sections",       "type": "Umbraco.MultiUrlPicker" },
+        { "alias": "seoTitle",         "name": "SEO Title",          "type": "Umbraco.TextBox" },
+        { "alias": "seoDescription",   "name": "SEO Description",    "type": "Umbraco.TextArea" },
+        { "alias": "legacyUrl",        "name": "Legacy SharePoint URL", "type": "Umbraco.TextBox" }
+      ]
+    },
+    {
+      "alias": "contentPage",
+      "name": "Content Page",
+      "icon": "icon-document",
+      "allowedAsRoot": false,
+      "allowedChildren": ["contentPage"],
+      "properties": [
+        { "alias": "pageTitle",        "name": "Page Title",         "type": "Umbraco.TextBox" },
+        { "alias": "bodyContent",      "name": "Body Content",       "type": "Umbraco.TinyMCE" },
+        { "alias": "relatedLinks",     "name": "Related Links",      "type": "Umbraco.MultiUrlPicker" },
+        { "alias": "attachments",      "name": "Attachments",        "type": "Umbraco.MediaPicker3" },
+        { "alias": "lastUpdated",      "name": "Last Updated",       "type": "Umbraco.DateTime" },
+        { "alias": "seoTitle",         "name": "SEO Title",          "type": "Umbraco.TextBox" },
+        { "alias": "seoDescription",   "name": "SEO Description",    "type": "Umbraco.TextArea" },
+        { "alias": "legacyUrl",        "name": "Legacy SharePoint URL", "type": "Umbraco.TextBox" }
+      ]
+    },
+    {
+      "alias": "departmentPage",
+      "name": "Department Page",
+      "icon": "icon-building",
+      "allowedAsRoot": false,
+      "allowedChildren": ["contentPage"],
+      "properties": [
+        { "alias": "departmentName",   "name": "Department Name",    "type": "Umbraco.TextBox" },
+        { "alias": "overview",         "name": "Overview",           "type": "Umbraco.TinyMCE" },
+        { "alias": "contactDetails",   "name": "Contact Details",    "type": "Umbraco.NestedContent" },
+        { "alias": "headOfDept",       "name": "Head of Department", "type": "Umbraco.TextBox" },
+        { "alias": "services",         "name": "Services Offered",   "type": "Umbraco.MultiUrlPicker" },
+        { "alias": "documents",        "name": "Department Documents","type": "Umbraco.MediaPicker3" },
+        { "alias": "seoTitle",         "name": "SEO Title",          "type": "Umbraco.TextBox" },
+        { "alias": "seoDescription",   "name": "SEO Description",    "type": "Umbraco.TextArea" },
+        { "alias": "legacyUrl",        "name": "Legacy SharePoint URL", "type": "Umbraco.TextBox" }
+      ]
+    },
+    {
+      "alias": "newsArticlePage",
+      "name": "News Article Page",
+      "icon": "icon-newspaper",
+      "allowedAsRoot": false,
+      "allowedChildren": [],
+      "properties": [
+        { "alias": "headline",         "name": "Headline",           "type": "Umbraco.TextBox" },
+        { "alias": "summary",          "name": "Summary",            "type": "Umbraco.TextArea" },
+        { "alias": "bodyContent",      "name": "Body Content",       "type": "Umbraco.TinyMCE" },
+        { "alias": "publishDate",      "name": "Publish Date",       "type": "Umbraco.DateTime" },
+        { "alias": "category",         "name": "Category",           "type": "Umbraco.Tags" },
+        { "alias": "heroImage",        "name": "Hero Image",         "type": "Umbraco.MediaPicker3" },
+        { "alias": "author",           "name": "Author",             "type": "Umbraco.TextBox" },
+        { "alias": "seoTitle",         "name": "SEO Title",          "type": "Umbraco.TextBox" },
+        { "alias": "seoDescription",   "name": "SEO Description",    "type": "Umbraco.TextArea" },
+        { "alias": "legacyUrl",        "name": "Legacy SharePoint URL", "type": "Umbraco.TextBox" }
+      ]
+    },
+    {
+      "alias": "documentPage",
+      "name": "Document/Policy Page",
+      "icon": "icon-pdf",
+      "allowedAsRoot": false,
+      "allowedChildren": [],
+      "properties": [
+        { "alias": "documentTitle",    "name": "Document Title",     "type": "Umbraco.TextBox" },
+        { "alias": "description",      "name": "Description",        "type": "Umbraco.TextArea" },
+        { "alias": "documentFile",     "name": "Document File",      "type": "Umbraco.MediaPicker3" },
+        { "alias": "documentCategory", "name": "Category",           "type": "Umbraco.Tags" },
+        { "alias": "effectiveDate",    "name": "Effective Date",     "type": "Umbraco.DateTime" },
+        { "alias": "department",       "name": "Owning Department",  "type": "Umbraco.ContentPicker" },
+        { "alias": "legacyUrl",        "name": "Legacy SharePoint URL", "type": "Umbraco.TextBox" }
+      ]
+    }
+  ],
+
+  "contentTree": {
+    "Home": {
+      "docType": "homePage",
+      "umbracoPath": "/",
+      "children": {
+        "City Connect":          { "docType": "sectionLanding", "umbracoPath": "/city-connect" },
+        "Departments":           { "docType": "sectionLanding", "umbracoPath": "/departments" },
+        "Documents and Policies":{ "docType": "sectionLanding", "umbracoPath": "/documents-and-policies" },
+        "Explore and Enjoy":     { "docType": "sectionLanding", "umbracoPath": "/explore-and-enjoy" },
+        "Family and Home":       { "docType": "sectionLanding", "umbracoPath": "/family-and-home" },
+        "Local and Communities": { "docType": "sectionLanding", "umbracoPath": "/local-and-communities" },
+        "Media and News":        { "docType": "sectionLanding", "umbracoPath": "/media-and-news" },
+        "Work and Business":     { "docType": "sectionLanding", "umbracoPath": "/work-and-business" }
+      }
+    }
+  }
+}

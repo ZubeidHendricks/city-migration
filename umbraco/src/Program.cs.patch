@@ -1,0 +1,31 @@
+// ============================================================
+// Add these lines to your Umbraco project's Program.cs
+// ============================================================
+
+// 1. Register the custom URL segment provider (in builder section):
+builder.Services.AddUnique<IUrlSegmentProvider, CityUrlSegmentProvider>();
+
+// 2. Register the legacy redirect middleware (after builder.Build()):
+var app = builder.Build();
+
+// *** ADD THIS LINE — must come before UseUmbraco ***
+app.UseMiddleware<LegacyRedirectMiddleware>();
+
+app.UseUmbraco()
+    .WithMiddleware(u =>
+    {
+        u.UseBackOffice();
+        u.UseWebsite();
+    })
+    .WithEndpoints(u =>
+    {
+        u.UseInstallerEndpoints();
+        u.UseBackOfficeEndpoints();
+        u.UseWebsiteEndpoints();
+    });
+
+// ============================================================
+// Also copy these files into your Umbraco project:
+//   output/url_map.json        → wwwroot/migration/url_map.json
+//   output/umbraco_import.json → wwwroot/migration/umbraco_import.json
+// ============================================================

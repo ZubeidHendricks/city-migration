@@ -1,0 +1,95 @@
+{
+  "_comment": "SharePoint path → Umbraco slug transformation rules. Applied in order.",
+
+  "globalRules": [
+    { "description": "Decode URL encoding (%20 → space, then space → hyphen)", "pattern": "%20", "replace": "-" },
+    { "description": "Lowercase everything",                                    "transform": "lowercase" },
+    { "description": "Replace spaces with hyphens",                             "pattern": " ",   "replace": "-" },
+    { "description": "Remove .aspx extension",                                  "pattern": ".aspx", "replace": "" },
+    { "description": "Collapse multiple hyphens",                               "pattern": "--+", "replace": "-", "regex": true },
+    { "description": "Strip trailing slash",                                    "transform": "trimTrailingSlash" }
+  ],
+
+  "sectionMappings": [
+    {
+      "sharepoint": "/City-Connect",
+      "umbraco":    "/city-connect",
+      "children": [
+        { "sharepoint": "/City-Connect/Apply",    "umbraco": "/city-connect/apply" },
+        { "sharepoint": "/City-Connect/Pay",      "umbraco": "/city-connect/pay" },
+        { "sharepoint": "/City-Connect/Register", "umbraco": "/city-connect/register" },
+        { "sharepoint": "/City-Connect/Report",   "umbraco": "/city-connect/report" },
+        { "sharepoint": "/City-Connect/have-your-say", "umbraco": "/city-connect/have-your-say" }
+      ]
+    },
+    {
+      "sharepoint": "/Departments",
+      "umbraco":    "/departments",
+      "children": [
+        { "sharepoint": "/Departments/Budget-Office",                           "umbraco": "/departments/budget-office" },
+        { "sharepoint": "/Departments/City-Health",                             "umbraco": "/departments/city-health" },
+        { "sharepoint": "/Departments/Community-Arts-and-Culture",              "umbraco": "/departments/community-arts-and-culture" },
+        { "sharepoint": "/Departments/Customer-Relations",                      "umbraco": "/departments/customer-relations" },
+        { "sharepoint": "/Departments/Development-Management",                  "umbraco": "/departments/development-management" },
+        { "sharepoint": "/Departments/Disaster-Risk-Management",                "umbraco": "/departments/disaster-risk-management" },
+        { "sharepoint": "/Departments/Electricity-Generation-and-Distribution", "umbraco": "/departments/electricity-generation-and-distribution" },
+        { "sharepoint": "/Departments/Enterprise-and-Investment",               "umbraco": "/departments/enterprise-and-investment" },
+        { "sharepoint": "/Departments/Environmental-Management",                "umbraco": "/departments/environmental-management" },
+        { "sharepoint": "/Departments/Fire-and-Rescue-Service",                 "umbraco": "/departments/fire-and-rescue-service" },
+        { "sharepoint": "/Departments/Human-Resources",                         "umbraco": "/departments/human-resources" },
+        { "sharepoint": "/Departments/Law-Enforcement-Traffic-and-Coordination","umbraco": "/departments/law-enforcement-traffic-and-coordination" },
+        { "sharepoint": "/Departments/Metropolitan-Police-Services",            "umbraco": "/departments/metropolitan-police-services" },
+        { "sharepoint": "/Departments/Office-of-the-City-Manager",              "umbraco": "/departments/office-of-the-city-manager" },
+        { "sharepoint": "/Departments/Public-Housing",                          "umbraco": "/departments/public-housing" },
+        { "sharepoint": "/Departments/Treasury",                                "umbraco": "/departments/treasury" },
+        { "sharepoint": "/Departments/Urban-Planning-and-Design",               "umbraco": "/departments/urban-planning-and-design" },
+        { "sharepoint": "/Departments/Water-and-Sanitation",                    "umbraco": "/departments/water-and-sanitation" }
+      ]
+    },
+    {
+      "sharepoint": "/Family%20and%20home",
+      "umbraco":    "/family-and-home",
+      "children": [
+        { "sharepoint": "/Family%20and%20home/residential-utility-services/residential-electricity-services", "umbraco": "/family-and-home/utilities/electricity" },
+        { "sharepoint": "/Family%20and%20home/residential-utility-services/residential-water-and-sanitation-services", "umbraco": "/family-and-home/utilities/water-and-sanitation" }
+      ]
+    },
+    {
+      "sharepoint": "/Media-and-news",
+      "umbraco":    "/media-and-news",
+      "children": [
+        { "sharepoint": "/Media-and-news/press-releases",  "umbraco": "/media-and-news/press-releases" },
+        { "sharepoint": "/Media-and-news/media-releases",  "umbraco": "/media-and-news/media-releases" },
+        { "sharepoint": "/Media-and-news/speeches",        "umbraco": "/media-and-news/speeches" }
+      ]
+    },
+    {
+      "sharepoint": "/Work%20and%20business",
+      "umbraco":    "/work-and-business",
+      "children": [
+        { "sharepoint": "/Work%20and%20business/Planning-portal",              "umbraco": "/work-and-business/planning-portal" },
+        { "sharepoint": "/Work%20and%20business/planning-portal/Spatial-Plans-and-Frameworks/district-plans", "umbraco": "/work-and-business/planning-portal/spatial-plans/district-plans" }
+      ]
+    },
+    {
+      "sharepoint": "/Local%20and%20communities",
+      "umbraco":    "/local-and-communities"
+    },
+    {
+      "sharepoint": "/Explore%20and%20enjoy",
+      "umbraco":    "/explore-and-enjoy"
+    },
+    {
+      "sharepoint": "/Document-centre",
+      "umbraco":    "/documents-and-policies"
+    }
+  ],
+
+  "staticPageMappings": [
+    { "sharepoint": "/Pages/Sitemap.aspx",    "umbraco": "/sitemap" },
+    { "sharepoint": "/General/Help",          "umbraco": "/help" },
+    { "sharepoint": "/General/Terms-of-use",  "umbraco": "/terms-of-use" },
+    { "sharepoint": "/General/Privacy",       "umbraco": "/privacy-policy" },
+    { "sharepoint": "/General/Feedback",      "umbraco": "/feedback" }
+  ]
+}

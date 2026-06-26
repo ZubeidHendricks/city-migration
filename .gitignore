@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Output files (large generated artefacts — regenerate by running the scraper)
+output/content_inventory.csv
+output/url_map.json
+output/umbraco_import.json
+output/redirects_nginx.conf
+output/redirects_iis_fragments.xml
+
+# Keep the output directory itself
+!output/.gitkeep
+
+# macOS
+.DS_Store
+
+# JetBrains / VS
+.idea/
+.vs/
+*.user
+bin/
+obj/
